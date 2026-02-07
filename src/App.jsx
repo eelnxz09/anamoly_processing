@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, Activity, AlertTriangle, TrendingUp, BarChart3, Shield, Database, FileText, Link } from 'lucide-react';
-import './styles/App.css';
+import "./App.css";
 import UploadSection from './components/UploadSection';
 import Dashboard from './components/Dashboard';
 import TransactionList from './components/TransactionList';
