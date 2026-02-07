@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, Activity, AlertTriangle, TrendingUp, BarChart3, Shield, Database, FileText, Link } from 'lucide-react';
 import "./App.css";
-import UploadSection from './components/UploadSection';
-import Dashboard from './components/Dashboard';
-import TransactionList from './components/TransactionList';
-import Analytics from './components/Analytics';
-import LiveDataConnector from './components/LiveDataConnector';
+import UploadSection from "./UploadSection";
+
+import Dashboard from './Dashboard';
+import TransactionList from './TransactionList';
+import Analytics from './Analytics';
+import LiveDataConnector from './LiveDataConnector';
 
 const API_BASE_URL = 'http://localhost:8000';
 
