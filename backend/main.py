@@ -1,20 +1,13 @@
-from fastapi import FastAPI, UploadFile, File
-from fastapi.middleware.cors import CORSMiddleware
-import pandas as pd
-from model import detect_anomalies
+import os
+import uvicorn
+from fastapi import FastAPI
 
 app = FastAPI()
 
-# Allow GitHub Pages frontend
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+@app.get("/")
+def root():
+    return {"message": "API running"}
 
-@app.post("/analyze-csv")
-async def analyze_csv(file: UploadFile = File(...)):
-    df = pd.read_csv(file.file)
-    result = detect_anomalies(df)
-    return result.to_dict(orient="records")
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
